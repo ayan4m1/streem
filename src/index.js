@@ -1,5 +1,19 @@
-import { getLogger } from 'modules/logging';
+import get from 'simple-get';
+import { promisify } from 'util';
 
-const log = getLogger('app');
+import { discord, stream } from 'modules/config';
+import { client, connectBot, registerHandler } from 'modules/discord';
 
-log.info('Hello World!');
+const getPromise = promisify(get);
+
+registerHandler('ready', async () => {
+  const guild = client.guilds.resolve(discord.guildId);
+  const channel = guild.channels.resolve(discord.channelId);
+
+  const voiceConnection = await channel.join();
+  const httpStream = await getPromise(stream.url);
+
+  voiceConnection.play(httpStream);
+});
+
+connectBot();
