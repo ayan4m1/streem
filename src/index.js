@@ -66,7 +66,6 @@ const startStream = async () => {
     const voiceConnection = await channel.join();
     const httpStream = await getPromise(stream.url);
 
-    updatePresence();
     voiceConnection.play(httpStream);
   } catch (error) {
     log.error(error.message);
@@ -77,4 +76,5 @@ const startStream = async () => {
 
 registerHandler('ready', startStream);
 
+updatePresence();
 connectBot();
