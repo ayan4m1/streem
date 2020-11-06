@@ -1,5 +1,9 @@
 import 'dotenv/config';
 
+export const azuracast = {
+  url: process.env.STREEM_AZURACAST_URL
+};
+
 export const discord = {
   botToken: process.env.STREEM_DISCORD_BOT_TOKEN,
   guildId: process.env.STREEM_DISCORD_GUILD_ID,
@@ -16,6 +20,7 @@ export const stream = {
 };
 
 export default {
+  azuracast,
   discord,
   logging,
   stream
