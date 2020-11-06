@@ -29,7 +29,7 @@ const updatePresence = () =>
       } = firstStation;
 
       log.info('Updating presence');
-      if (live) {
+      if (live && live.is_live) {
         client.user.setPresence({
           activity: {
             name: `${live.streamer_name} on ${stationName}`,
