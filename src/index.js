@@ -74,7 +74,9 @@ const startStream = async () => {
   }
 };
 
-registerHandler('ready', startStream);
+registerHandler('ready', () => {
+  updatePresence();
+  startStream();
+});
 
-updatePresence();
 connectBot();
