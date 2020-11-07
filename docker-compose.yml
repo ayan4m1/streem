@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  bot:
+    build: .
+    environment:
+      - STREEM_LOG_LEVEL
+      - STREEM_LOG_TIME_FMT
+      - STREEM_DISCORD_BOT_TOKEN
+      - STREEM_DISCORD_GUILD_ID
+      - STREEM_DISCORD_CHANNEL_ID
+      - STREEM_STREAM_URL
+      - STREEM_AZURACAST_URL
