@@ -69,6 +69,7 @@ const startStream = async () => {
 
     httpStream.on('close', () => {
       log.info('Stream closed, restarting!');
+      voiceConnection.disconnect();
       startStream();
     });
 
