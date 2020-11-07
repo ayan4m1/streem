@@ -33,3 +33,10 @@ $ npm install
 $ npm run build
 $ pm2 restart streem
 ```
+
+## docker
+
+If you'd like to use Docker to run the bot, simply do the following:
+
+1. Copy `.env.default` to `.env` and edit the settings
+2. Run `docker-compose up` or `docker-compose up -d` to start the bot
