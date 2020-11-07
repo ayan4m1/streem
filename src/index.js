@@ -63,14 +63,21 @@ const startStream = async () => {
     const guild = client.guilds.resolve(discord.guildId);
     const channel = guild.channels.resolve(discord.channelId);
 
+    log.info(`Joining channel ${discord.channelId}`);
     const voiceConnection = await channel.join();
     const httpStream = await getPromise(stream.url);
 
+    httpStream.on('close', () => {
+      log.info('Stream closed, restarting!');
+      startStream();
+    });
+
+    log.info('Playing stream...');
     voiceConnection.play(httpStream);
   } catch (error) {
     log.error(error.message);
     log.error(error.stack);
-    return startStream();
+    startStream();
   }
 };
 
