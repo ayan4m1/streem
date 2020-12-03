@@ -75,6 +75,12 @@ const startStream = async () => {
 
     log.info('Playing stream...');
     voiceConnection.play(httpStream);
+
+    setTimeout(() => {
+      log.info('Restarting stream!');
+      voiceConnection.disconnect();
+      startStream();
+    }, stream.restartInterval);
   } catch (error) {
     log.error(error.message);
     log.error(error.stack);
