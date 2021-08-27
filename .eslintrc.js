@@ -1,24 +1,23 @@
 module.exports = {
   env: {
-    commonjs: true,
-    es6: true,
+    es2020: true,
     node: true
   },
-  plugins: ['import', 'prettier'],
   extends: [
     'eslint:recommended',
     'plugin:prettier/recommended',
-    'plugin:import/errors',
-    'prettier'
+    'plugin:import/recommended'
   ],
-  parser: 'babel-eslint',
+  parser: '@babel/eslint-parser',
   parserOptions: {
-    ecmaVersion: 9,
-    sourceType: 'module'
+    requireConfigFile: false,
+    ecmaVersion: 12
   },
   settings: {
     'import/resolver': {
-      alias: [['modules', './src/modules']]
+      node: {
+        moduleDirectory: ['node_modules', './src']
+      }
     }
   },
   rules: {
