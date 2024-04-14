@@ -1,10 +1,10 @@
 import Discord from 'discord.js';
 
-import { discord as config } from 'modules/config';
-import { getLogger } from 'modules/logging';
+import { discord as config } from './config.js';
+import { getLogger } from './logging.js';
 
 export const client = new Discord.Client({
-  partials: ['REACTION', 'MESSAGE', 'USER', 'GUILD_MEMBER']
+  intents: ['Guilds']
 });
 const log = getLogger('discord');
 

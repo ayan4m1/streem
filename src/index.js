@@ -1,9 +1,9 @@
 import get from 'simple-get';
 import { promisify } from 'util';
 
-import { azuracast, discord, stream } from 'modules/config';
-import { client, connectBot, registerHandler } from 'modules/discord';
-import { getLogger } from 'modules/logging';
+import { azuracast, discord, stream } from './modules/config.js';
+import { client, connectBot, registerHandler } from './modules/discord.js';
+import { getLogger } from './modules/logging.js';
 
 const log = getLogger('app');
 const getPromise = promisify(get);

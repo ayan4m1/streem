@@ -20,10 +20,3 @@ export const stream = {
   restartInterval:
     parseInt(process.env.STREEM_STREAM_RESTART_INTERVAL, 10) || 60 * 60 * 1000
 };
-
-export default {
-  azuracast,
-  discord,
-  logging,
-  stream
-};
