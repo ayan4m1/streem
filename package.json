@@ -1,7 +1,7 @@
 {
   "name": "streem",
   "type": "module",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Repeat a streaming radio station over Discord voice.",
   "author": "ayan4m1 <andrew@bulletlogic.com>",
   "license": "MIT",
