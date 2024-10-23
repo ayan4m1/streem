@@ -1,10 +1,14 @@
 {
-  "name": "streem",
+  "name": "@ayan4m1/streem",
   "type": "module",
   "version": "0.2.1",
   "description": "Repeat a streaming radio station over Discord voice.",
   "author": "ayan4m1 <andrew@bulletlogic.com>",
   "license": "MIT",
+  "bin": {
+    "streem": "src/index.js"
+  },
+  "module": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
     "prepare": "husky",
